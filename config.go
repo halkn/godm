@@ -8,7 +8,8 @@ import (
 )
 
 type config struct {
-	Dirs []string `json:"dirs"`
+	Installpath string
+	Dirs        []string `json:"dirs"`
 }
 
 func loadConfig() (*config, error) {

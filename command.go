@@ -28,6 +28,8 @@ func newSubCommand(sub string, cmd *command) execer {
 	switch sub {
 	case "deps":
 		return &depsCommand{command: cmd}
+	case "edit":
+		return &editCommand{command: cmd}
 	case "install":
 		log.Println("install command is not yet implemented")
 		return nil

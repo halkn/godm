@@ -21,7 +21,8 @@ func TestLoadConfig(t *testing.T) {
 		"xdg_ok": {
 			confdir: filepath.Join(pwd, "testdata"),
 			want: &config{
-				Dirs: []string{"path/to/test", "path/to/test1"},
+				Installpath: "$HOME/.dotfiles",
+				Dirs:        []string{"path/to/test", "path/to/test1"},
 			},
 			isErr: false,
 		},

@@ -1,4 +1,5 @@
 {
+  "installpath": "$HOME/.dotfiles",
   "dirs": [
     "path/to/test",
     "path/to/test1"

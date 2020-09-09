@@ -61,6 +61,10 @@ func TestNewSubCommand(t *testing.T) {
 			sub:  "deps",
 			want: &depsCommand{command: c},
 		},
+		"edit": {
+			sub:  "edit",
+			want: &editCommand{command: c},
+		},
 		"install": {
 			sub:  "install",
 			want: nil,
