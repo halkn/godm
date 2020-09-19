@@ -16,7 +16,7 @@ func (ec *editCommand) exec(args []string) error {
 		editor = "vi"
 	}
 
-	cmd := exec.Command("sh", "-c", editor, "-c '"+os.ExpandEnv(ec.Installpath)+"'")
+	cmd := exec.Command(editor, "-c", "cd "+os.ExpandEnv(ec.Installpath))
 	cmd.Stdin = os.Stdin
 	cmd.Stdout = ec.outWriter
 
