@@ -7,10 +7,11 @@ import (
 	"reflect"
 	"strings"
 	"testing"
+
+	"github.com/halkn/godm/installer"
 )
 
 func TestCommand_out(t *testing.T) {
-
 	out := new(bytes.Buffer)
 	err := new(bytes.Buffer)
 	wantmes := "want message"
@@ -24,11 +25,9 @@ func TestCommand_out(t *testing.T) {
 		}
 		out.Reset()
 	})
-
 }
 
 func TestCommand_log(t *testing.T) {
-
 	out := new(bytes.Buffer)
 	err := new(bytes.Buffer)
 	wantlog := "want log"
@@ -67,7 +66,7 @@ func TestNewSubCommand(t *testing.T) {
 		},
 		"install": {
 			sub:  "install",
-			want: nil,
+			want: &installCommand{command: c, Installer: installer.NewCommandInstaller()},
 		},
 		"update": {
 			sub:  "update",
@@ -99,5 +98,4 @@ func TestNewSubCommand(t *testing.T) {
 			}
 		})
 	}
-
 }

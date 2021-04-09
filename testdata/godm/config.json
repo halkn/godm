@@ -3,5 +3,9 @@
   "dirs": [
     "path/to/test",
     "path/to/test1"
+  ],
+  "tools": [
+    ["go", "install", "github.com/halkn/godm/cmd/godm@latest"],
+    ["npm", "install", "-g", "npm"]
   ]
 }

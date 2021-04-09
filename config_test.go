@@ -23,6 +23,10 @@ func TestLoadConfig(t *testing.T) {
 			want: &config{
 				Installpath: "$HOME/.dotfiles",
 				Dirs:        []string{"path/to/test", "path/to/test1"},
+				Tools: [][]string{
+					{"go", "install", "github.com/halkn/godm/cmd/godm@latest"},
+					{"npm", "install", "-g", "npm"},
+				},
 			},
 			isErr: false,
 		},
