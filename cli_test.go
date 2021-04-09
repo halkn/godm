@@ -32,7 +32,6 @@ func TestNewCLI(t *testing.T) {
 }
 
 func TestCLI_Run(t *testing.T) {
-
 	pwd, _ := os.Getwd()
 
 	out := new(bytes.Buffer)
@@ -75,7 +74,7 @@ func TestCLI_Run(t *testing.T) {
 			config: "testdata",
 			args:   []string{"godm", "deps", "--xxxxxxxxx"},
 			wantc:  1,
-			errmes: "failed to exec command",
+			errmes: "failed to deps exec",
 		},
 	}
 

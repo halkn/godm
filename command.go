@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"io"
 	"log"
+
+	"github.com/halkn/godm/installer"
 )
 
 type execer interface {
@@ -31,8 +33,7 @@ func newSubCommand(sub string, cmd *command) execer {
 	case "edit":
 		return &editCommand{command: cmd}
 	case "install":
-		log.Println("install command is not yet implemented")
-		return nil
+		return &installCommand{command: cmd, Installer: installer.NewCommandInstaller()}
 	case "update":
 		log.Println("update command is not yet implemented")
 		return nil

@@ -42,7 +42,7 @@ func (c *CLI) Run(args []string) int {
 	}
 
 	if err := subcmd.exec(args[1:]); err != nil {
-		log.Printf("failed to exec command: %s, %v", args[1], err)
+		log.Printf("failed to %s exec\n%v", args[1], err)
 		return 1
 	}
 
